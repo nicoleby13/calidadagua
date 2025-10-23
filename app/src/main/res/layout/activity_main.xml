@@ -1,0 +1,455 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/swipeRefresh"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_color">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/main"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- ========== HEADER SECTION ========== -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="16dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/app_name"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/primary_text"
+                    android:gravity="center"
+                    android:layout_marginBottom="8dp" />
+
+                <TextView
+                    android:id="@+id/tvLastUpdate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Última actualización: --"
+                    android:textSize="13sp"
+                    android:textColor="@color/secondary_text"
+                    android:gravity="center" />
+
+            </LinearLayout>
+
+            <!-- ========== STATUS SECTION ========== -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/status_section_title"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@color/primary_text"
+                android:layout_marginBottom="12dp" />
+
+            <!-- 2 Status Cards (Horizontal - centradas con márgenes uniformes) -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="24dp">
+
+                <include layout="@layout/card_status_alerts"
+                    android:layout_width="0dp"
+                    android:layout_height="140dp"
+                    android:layout_weight="1" />
+
+                <Space
+                    android:layout_width="24dp"
+                    android:layout_height="1dp" />
+
+                <include layout="@layout/card_status_device"
+                    android:layout_width="0dp"
+                    android:layout_height="140dp"
+                    android:layout_weight="1" />
+
+            </LinearLayout>
+
+            <!-- ========== PARAMETERS SECTION ========== -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/parameters_section_title"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@color/primary_text"
+                android:layout_marginBottom="12dp" />
+
+            <!-- Grid 2 Columns -->
+            <androidx.gridlayout.widget.GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:columnCount="2"
+                app:rowCount="3"
+                android:layout_marginBottom="16dp">
+
+                <!-- Temperature -->
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_columnWeight="1"
+                    android:layout_margin="6dp"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="3dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/param_temperature"
+                            android:textColor="@color/primary_text"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:layout_marginBottom="12dp" />
+
+                        <TextView
+                            android:id="@+id/tvTemp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="--°C"
+                            android:textColor="@color/primary_text"
+                            android:textSize="28sp"
+                            android:textStyle="bold"
+                            android:layout_marginBottom="8dp" />
+
+                        <ProgressBar
+                            android:id="@+id/progressTemp"
+                            style="?android:attr/progressBarStyleHorizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="6dp"
+                            android:progress="0"
+                            android:max="100"
+                            android:progressDrawable="@drawable/progress_bar_custom"
+                            android:layout_marginBottom="6dp" />
+
+                        <TextView
+                            android:id="@+id/tvTempStatus"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Sin datos"
+                            android:textSize="11sp"
+                            android:textColor="@color/status_offline" />
+
+                    </LinearLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- pH -->
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_columnWeight="1"
+                    android:layout_margin="6dp"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="3dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/param_ph"
+                            android:textColor="@color/primary_text"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:layout_marginBottom="12dp" />
+
+                        <TextView
+                            android:id="@+id/tvPH"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="--"
+                            android:textColor="@color/primary_text"
+                            android:textSize="28sp"
+                            android:textStyle="bold"
+                            android:layout_marginBottom="8dp" />
+
+                        <ProgressBar
+                            android:id="@+id/progressPH"
+                            style="?android:attr/progressBarStyleHorizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="6dp"
+                            android:progress="0"
+                            android:max="100"
+                            android:progressDrawable="@drawable/progress_bar_custom"
+                            android:layout_marginBottom="6dp" />
+
+                        <TextView
+                            android:id="@+id/tvPHStatus"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Sin datos"
+                            android:textSize="11sp"
+                            android:textColor="@color/status_offline" />
+
+                    </LinearLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- EC (Conductivity) -->
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_columnWeight="1"
+                    android:layout_margin="6dp"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="3dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/param_conductivity"
+                            android:textColor="@color/primary_text"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:layout_marginBottom="12dp" />
+
+                        <TextView
+                            android:id="@+id/tvEC"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="-- µS/cm"
+                            android:textColor="@color/primary_text"
+                            android:textSize="24sp"
+                            android:textStyle="bold"
+                            android:layout_marginBottom="8dp" />
+
+                        <ProgressBar
+                            android:id="@+id/progressEC"
+                            style="?android:attr/progressBarStyleHorizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="6dp"
+                            android:progress="0"
+                            android:max="100"
+                            android:progressDrawable="@drawable/progress_bar_custom"
+                            android:layout_marginBottom="6dp" />
+
+                        <TextView
+                            android:id="@+id/tvECStatus"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Sin datos"
+                            android:textSize="11sp"
+                            android:textColor="@color/status_offline" />
+
+                    </LinearLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- NTU (Turbidity) -->
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_columnWeight="1"
+                    android:layout_margin="6dp"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="3dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/param_turbidity"
+                            android:textColor="@color/primary_text"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:layout_marginBottom="12dp" />
+
+                        <TextView
+                            android:id="@+id/tvNTU"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="-- NTU"
+                            android:textColor="@color/primary_text"
+                            android:textSize="28sp"
+                            android:textStyle="bold"
+                            android:layout_marginBottom="8dp" />
+
+                        <ProgressBar
+                            android:id="@+id/progressNTU"
+                            style="?android:attr/progressBarStyleHorizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="6dp"
+                            android:progress="0"
+                            android:max="100"
+                            android:progressDrawable="@drawable/progress_bar_custom"
+                            android:layout_marginBottom="6dp" />
+
+                        <TextView
+                            android:id="@+id/tvNTUStatus"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Sin datos"
+                            android:textSize="11sp"
+                            android:textColor="@color/status_offline" />
+
+                    </LinearLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- TDS -->
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_columnWeight="1"
+                    android:layout_margin="6dp"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="3dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/param_tds"
+                            android:textColor="@color/primary_text"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:layout_marginBottom="12dp" />
+
+                        <TextView
+                            android:id="@+id/tvTDS"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="-- ppm"
+                            android:textColor="@color/primary_text"
+                            android:textSize="28sp"
+                            android:textStyle="bold"
+                            android:layout_marginBottom="8dp" />
+
+                        <ProgressBar
+                            android:id="@+id/progressTDS"
+                            style="?android:attr/progressBarStyleHorizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="6dp"
+                            android:progress="0"
+                            android:max="100"
+                            android:progressDrawable="@drawable/progress_bar_custom"
+                            android:layout_marginBottom="6dp" />
+
+                        <TextView
+                            android:id="@+id/tvTDSStatus"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Sin datos"
+                            android:textSize="11sp"
+                            android:textColor="@color/status_offline" />
+
+                    </LinearLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- ORP -->
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_columnWeight="1"
+                    android:layout_margin="6dp"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="3dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/param_orp"
+                            android:textColor="@color/primary_text"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:layout_marginBottom="12dp" />
+
+                        <TextView
+                            android:id="@+id/tvORP"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="-- mV"
+                            android:textColor="@color/primary_text"
+                            android:textSize="28sp"
+                            android:textStyle="bold"
+                            android:layout_marginBottom="8dp" />
+
+                        <ProgressBar
+                            android:id="@+id/progressORP"
+                            style="?android:attr/progressBarStyleHorizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="6dp"
+                            android:progress="0"
+                            android:max="100"
+                            android:progressDrawable="@drawable/progress_bar_custom"
+                            android:layout_marginBottom="6dp" />
+
+                        <TextView
+                            android:id="@+id/tvORPStatus"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Sin datos"
+                            android:textSize="11sp"
+                            android:textColor="@color/status_offline" />
+
+                    </LinearLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+            </androidx.gridlayout.widget.GridLayout>
+
+            <!-- Control Button -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnLogout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="🚪 Cerrar sesión"
+                android:textSize="16sp"
+                android:layout_marginTop="8dp"
+                app:cornerRadius="8dp"
+                style="@style/Widget.Material3.Button.OutlinedButton" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

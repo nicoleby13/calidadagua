@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "109318715809",
+    "firebase_url": "https://calidadagua-629a2-default-rtdb.firebaseio.com",
+    "project_id": "calidadagua-629a2",
+    "storage_bucket": "calidadagua-629a2.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:109318715809:android:dc65ab88cd33edd9fa73e0",
+        "android_client_info": {
+          "package_name": "com.example.calidadagua"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAEaXnIRk9Qwn7UBXStUB7RqXHxYF3d2pU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

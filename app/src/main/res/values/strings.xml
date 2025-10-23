@@ -1,0 +1,48 @@
+<resources>
+    <string name="app_name">Sistema de monitoreo de calidad del agua</string>
+
+    <!-- Status Section -->
+    <string name="status_section_title">Estado del sistema</string>
+    <string name="status_overall_label">Calidad</string>
+    <string name="status_alerts_label">Alertas</string>
+    <string name="status_device_label">Dispositivo</string>
+
+    <!-- Parameters Section -->
+    <string name="parameters_section_title">Parámetros del agua</string>
+    <string name="param_temperature">Temperatura</string>
+    <string name="param_ph">Nivel de pH</string>
+    <string name="param_conductivity">Conductividad</string>
+    <string name="param_tds">Sólidos disueltos</string>
+    <string name="param_turbidity">Turbidez</string>
+    <string name="param_orp">Potencial redox</string>
+
+    <!-- Status Labels -->
+    <string name="status_excellent">Excelente</string>
+    <string name="status_good">Buena</string>
+    <string name="status_fair">Regular</string>
+    <string name="status_poor">Mala</string>
+    <string name="status_very_poor">Crítica</string>
+    <string name="status_optimal">Óptimo</string>
+    <string name="status_normal">Normal</string>
+    <string name="status_warning">Alerta</string>
+    <string name="status_critical">Crítico</string>
+    <string name="status_offline">Sin datos</string>
+    <string name="status_connected">Conectado</string>
+    <string name="status_disconnected">Desconectado</string>
+
+    <!-- Alert messages -->
+    <string name="no_alerts">Sin alertas</string>
+    <string name="alert_count">%d activa(s)</string>
+
+    <!-- Range labels -->
+    <string name="range_temp">22–26.5°C</string>
+    <string name="range_ph">6.5–8.5</string>
+    <string name="range_ec">400–2500 µS/cm</string>
+    <string name="range_tds">≤600 ppm</string>
+    <string name="range_ntu">≤5 NTU</string>
+    <string name="range_orp">650–750 mV</string>
+
+    <!-- Device info -->
+    <string name="device_id">UTEQ-01</string>
+    <string name="last_update">Actualizado hace %s</string>
+</resources>

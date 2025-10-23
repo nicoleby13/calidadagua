@@ -1,0 +1,31 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(./gradlew:*)",
+      "Bash(adb:*)",
+      "Bash(gradlew.bat build:*)",
+      "Bash(node:*)",
+      "Bash(npm:*)",
+      "Bash(ionic --version)",
+      "Bash(ng --version)",
+      "Bash(java:*)",
+      "Bash(where android)",
+      "Bash(echo $HOME)",
+      "Read(//c/Users/stevi//**)",
+      "Bash(ionic start:*)",
+      "Bash(ionic serve:*)",
+      "Bash(rsync:*)",
+      "Bash(del setup-admin.js)",
+      "Bash(ionic generate:*)",
+      "Bash(ionic build:*)",
+      "Bash(copy:*)",
+      "Bash(find:*)",
+      "Bash(del \"app\\src\\main\\res\\layout\\activity_main_old_backup.xml\")",
+      "Bash(del \"app\\src\\main\\res\\layout\\activity_main_new.xml\")",
+      "Bash(del \"app\\src\\main\\res\\layout\\card_status_overall.xml\")",
+      "Bash(del \"app\\src\\main\\res\\layout\\card_parameter.xml\")"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
