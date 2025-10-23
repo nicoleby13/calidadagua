@@ -41,46 +41,46 @@
   - **Notificaciones:** Firebase Cloud Messaging (FCM)
   - **UI:** Material Design Components, GridLayout, SwipeRefreshLayout
 
-  ## Dependencias principales
+## Dependencias principales
+```kotlin
+// Firebase
+com.google.firebase:firebase-auth
+com.google.firebase:firebase-database
+com.google.firebase:firebase-messaging
 
-  ```kotlin
-  // Firebase
-  com.google.firebase:firebase-auth
-  com.google.firebase:firebase-database
-  com.google.firebase:firebase-messaging
+// UI
+com.google.android.material:material
+androidx.gridlayout:gridlayout
+androidx.swiperefreshlayout:swiperefreshlayout
+```
 
-  // UI
-  com.google.android.material:material
-  androidx.gridlayout:gridlayout
-  androidx.swiperefreshlayout:swiperefreshlayout
+## Estructura del proyecto
+```
+app/
+├── src/main/
+│   ├── java/com/example/calidadagua/
+│   │   ├── MainActivity.kt           # Pantalla principal
+│   │   ├── LoginActivity.kt          # Autenticación
+│   │   ├── NotificationHelper.kt     # Notificaciones locales
+│   │   ├── FCMHelper.kt              # Firebase Cloud Messaging
+│   │   └── MyFirebaseMessagingService.kt
+│   └── res/
+│       ├── layout/
+│       │   ├── activity_main.xml
+│       │   ├── activity_login.xml
+│       │   ├── card_status_alerts.xml
+│       │   └── card_status_device.xml
+│       └── drawable/
+```
 
+## Sistema de notificaciones
 
-  ## Estructura del proyecto
+- **Notificaciones locales:** Alertas recurrentes cada 5 minutos mientras haya parámetros fuera de rango
+- **FCM Push:** Notificaciones a todos los dispositivos conectados
+- **Prioridades:** Máxima para alertas críticas, alta para advertencias
 
-  app/
-  ├── src/main/
-  │   ├── java/com/example/calidadagua/
-  │   │   ├── MainActivity.kt           # Pantalla principal
-  │   │   ├── LoginActivity.kt          # Autenticación
-  │   │   ├── NotificationHelper.kt     # Notificaciones locales
-  │   │   ├── FCMHelper.kt              # Firebase Cloud Messaging
-  │   │   └── MyFirebaseMessagingService.kt
-  │   └── res/
-  │       ├── layout/
-  │       │   ├── activity_main.xml
-  │       │   ├── activity_login.xml
-  │       │   ├── card_status_alerts.xml
-  │       │   └── card_status_device.xml
-  │       └── drawable/
+## 👥 Autor
 
-
-
-## CSistema de notificaciones 
-
-  - Notificaciones locales: Alertas recurrentes cada 5 minutos mientras haya parámetros fuera de rango
-  - FCM Push: Notificaciones a todos los dispositivos conectados
-  - Prioridades: Máxima para alertas críticas, alta para advertencias
-
-##👥 Autor
-Ing. Roxana Nicole Briones Yepez 
+**Ing. Roxana Nicole Briones Yepez**  
 Desarrollado para el sistema de monitoreo de calidad del agua en planta Q'Agua
+
