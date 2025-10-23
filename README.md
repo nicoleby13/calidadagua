@@ -81,6 +81,6 @@
   - FCM Push: Notificaciones a todos los dispositivos conectados
   - Prioridades: Máxima para alertas críticas, alta para advertencias
 
-  👥 Autor
+  ##👥 Autor
   Ing. Roxana Nicole Briones Yepez 
   Desarrollado para el sistema de monitoreo de calidad del agua en planta Q'Agua
