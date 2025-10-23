@@ -75,12 +75,12 @@
 
 
 
-  ## Sistema de notificaciones
+## CSistema de notificaciones 
 
   - Notificaciones locales: Alertas recurrentes cada 5 minutos mientras haya parámetros fuera de rango
   - FCM Push: Notificaciones a todos los dispositivos conectados
   - Prioridades: Máxima para alertas críticas, alta para advertencias
 
-  ##👥 Autor
-  Ing. Roxana Nicole Briones Yepez 
-  Desarrollado para el sistema de monitoreo de calidad del agua en planta Q'Agua
+##👥 Autor
+Ing. Roxana Nicole Briones Yepez 
+Desarrollado para el sistema de monitoreo de calidad del agua en planta Q'Agua
